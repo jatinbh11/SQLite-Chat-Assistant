@@ -1,0 +1,48 @@
+Here is a list of natural language questions that your SQLite Chat Assistant can understand and answer based on your database schema:
+
+📌 Employee-Related Queries
+1️⃣ Show me all employees in the Sales department.
+➡ SELECT * FROM Employees WHERE Department = 'Sales';
+
+2️⃣ Who is the manager of the Engineering department?
+➡ SELECT Manager FROM Departments WHERE Name = 'Engineering';
+
+3️⃣ List all employees hired after 2021-01-01.
+➡ SELECT * FROM Employees WHERE Hire_Date > '2021-01-01';
+
+4️⃣ What is the total salary expense for the Sales department?
+➡ SELECT SUM(Salary) FROM Employees WHERE Department = 'Sales';
+
+5️⃣ List the names of all employees.
+➡ SELECT Name FROM Employees;
+
+6️⃣ How many employees are in the Marketing department?
+➡ SELECT COUNT(*) FROM Employees WHERE Department = 'Marketing';
+
+📌 Department-Related Queries
+7️⃣ Show me a list of all departments.
+➡ SELECT Name FROM Departments;
+
+8️⃣ Who is the manager of the Sales department?
+➡ SELECT Manager FROM Departments WHERE Name = 'Sales';
+
+📌 Salary & Financial Queries
+9️⃣ What is the highest salary in the company?
+➡ SELECT MAX(Salary) FROM Employees;
+
+🔟 What is the lowest salary in the company?
+➡ SELECT MIN(Salary) FROM Employees;
+
+1️⃣1️⃣ What is the average salary of employees?
+➡ SELECT AVG(Salary) FROM Employees;
+
+1️⃣2️⃣ Show me employees earning more than 60,000.
+➡ SELECT * FROM Employees WHERE Salary > 60000;
+
+📌 Advanced Queries
+1️⃣3️⃣ Which department has the most employees?
+➡ SELECT Department, COUNT(*) AS EmployeeCount FROM Employees GROUP BY Department ORDER BY EmployeeCount DESC LIMIT 1;
+
+1️⃣4️⃣ Which department has the highest total salary expense?
+➡ SELECT Department, SUM(Salary) AS TotalSalary FROM Employees GROUP BY Department ORDER BY TotalSalary DESC LIMIT 1;
+
